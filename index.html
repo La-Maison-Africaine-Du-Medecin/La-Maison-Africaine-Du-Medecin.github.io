@@ -533,6 +533,38 @@ img{-webkit-user-drag:none}
   .nav{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(255,255,255,.97)}
   .rot__ring,.rot__ring2,.rot__glow,.cover__glow,.blob,.ring{animation:none!important}
 }
+
+/* ---------- COORDONNEES ---------- */
+.ct{list-style:none;margin:0;padding:0}
+.ct li{padding:10px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:2px}
+.ct li:last-child{border-bottom:0}
+.ct__k{font-size:10.5px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.ct__v{min-height:44px;display:inline-flex;align-items:center;font-size:15.5px;font-weight:700;
+ color:var(--navy);text-decoration:none;word-break:break-all}
+a.ct__v:hover{color:var(--cyan)}
+.foot a{text-decoration:none}
+
+/* ---------- TRES ETROITS : elimination des debordements ---------- */
+@media (max-width:640px){
+  .foot__top{grid-template-columns:1fr;gap:26px}
+  .cover__stats{gap:0}
+  .stat{padding:12px 10px 11px!important}
+  .stat span{letter-spacing:.06em;overflow-wrap:anywhere;word-break:break-word}
+  .foot li{overflow-wrap:anywhere}
+}
+@media (max-width:380px){
+  .stat b{font-size:17pt!important}
+  .stat span{font-size:6.9pt!important;letter-spacing:.04em}
+  .brand__t small{letter-spacing:.08em}
+}
+
+/* ---------- REPLI ETROIT : cartes et en-tetes de groupe ---------- */
+@media (max-width:640px){
+    .group__head{flex-wrap:wrap;gap:8px 12px}
+  .group__head h3{min-width:0;flex:1 1 auto;overflow-wrap:anywhere}
+  .group__head span{margin-left:0;flex:0 0 auto}
+  .foot a.tel{display:inline-block;padding:7px 0;min-height:38px}
+}
 </style>
 </head>
 <body>
@@ -1433,7 +1465,7 @@ img{-webkit-user-drag:none}
       </div>
     </div>
     <div class="card" style="padding:24px 28px;margin-top:26px;display:flex;align-items:center;gap:20px;flex-wrap:wrap">
-      <div style="flex:1;min-width:280px">
+      <div style="flex:1;min-width:min(280px,100%)">
         <b style="color:var(--navy);font-size:1rem;font-weight:800;display:block;margin-bottom:6px">Nous livrons également</b>
         <span style="font-size:13.6px;color:var(--muted)">Circuits et consommables d'anesthésie · agents et consommables de
           ventilation · sondes, électrodes et accessoires — références disponibles sur demande.</span>
@@ -1793,7 +1825,7 @@ img{-webkit-user-drag:none}
       </div>
     </div>
     <div class="card" style="padding:24px 28px;margin-top:26px;display:flex;align-items:center;gap:20px;flex-wrap:wrap">
-      <div style="flex:1;min-width:280px">
+      <div style="flex:1;min-width:min(280px,100%)">
         <b style="color:var(--navy);font-size:1rem;font-weight:800;display:block;margin-bottom:6px">Nous livrons également</b>
         <span style="font-size:13.6px;color:var(--muted)">Électrodes et gel d'électrocardiographie ·           consommables de réanimation (poches, canules, Freedom) · bouteilles et consommables           d'oxygénothérapie ·Extracteurs de mucosités · boîtes de matériel d'urgence.</span>
       </div>
@@ -2022,7 +2054,7 @@ img{-webkit-user-drag:none}
       </div>
     </div>
     <div class="card" style="padding:24px 28px;margin-top:26px;display:flex;align-items:center;gap:20px;flex-wrap:wrap">
-      <div style="flex:1;min-width:280px">
+      <div style="flex:1;min-width:min(280px,100%)">
         <b style="color:var(--navy);font-size:1rem;font-weight:800;display:block;margin-bottom:6px">Nous livrons également</b>
         <span style="font-size:13.6px;color:var(--muted)">Écrans et consoles de radiologie · tables de radiologie suspendues et mobiles · générateurs et tubes · accessoires et consommables d'imagerie.</span>
       </div>
@@ -3135,7 +3167,7 @@ img{-webkit-user-drag:none}
       </div>
     </div>
     <div class="card" style="padding:24px 28px;margin-top:26px;display:flex;align-items:center;gap:20px;flex-wrap:wrap">
-      <div style="flex:1;min-width:280px">
+      <div style="flex:1;min-width:min(280px,100%)">
         <b style="color:var(--navy);font-size:1rem;font-weight:800;display:block;margin-bottom:6px">Nous livrons également</b>
         <span style="font-size:13.6px;color:var(--muted)">Matelas médicaux et anti-escarres · tables de lit surélevées · lève-IV et supports de perfusion · armoires de chevet · tables de repas et commodes.</span>
       </div>
@@ -3187,13 +3219,15 @@ img{-webkit-user-drag:none}
     </div>
     <div class="card" style="padding:28px">
       <h3 style="font-size:1.1rem;font-weight:800;color:var(--navy);margin-bottom:18px">Coordonnées</h3>
-      <div class="todo">
-        <b>À compléter avant diffusion :</b><br>
-        • Adresse et téléphone — Tunisie<br>
-        • Adresse et téléphone — Côte d'Ivoire<br>
-        • E-mail · Site web · Réseaux sociaux<br>
-        • Nom du gérant / responsable
-      </div>
+      <ul class="ct">
+          <li><span class="ct__k">Téléphone — Tunisie</span>
+            <a class="ct__v" href="tel:+2162519193">+216 25 191 93</a>
+            <a class="ct__v" href="tel:+21658510303">+216 58 510 303</a></li>
+          <li><span class="ct__k">E-mail</span>
+            <a class="ct__v" href="mailto:mohamedali.elbiche@lamaisondumedecin.com">mohamedali.elbiche@lamaisondumedecin.com</a></li>
+          <li><span class="ct__k">Côte d'Ivoire</span>
+            <span class="ct__v" style="color:var(--muted);font-weight:600">Sur demande</span></li>
+        </ul>
     </div>
   </div>
 </section>
@@ -3232,9 +3266,10 @@ img{-webkit-user-drag:none}
       <div>
         <h4>Contact</h4>
         <ul>
-          <li>Tunisie — <em style="opacity:.6">à compléter</em></li>
-          <li>Côte d'Ivoire — <em style="opacity:.6">à compléter</em></li>
-          <li>E-mail — <em style="opacity:.6">à compléter</em></li>
+          <li>Tunisie — <a href="tel:+2162519193" class="tel" style="color:#fff;font-weight:700">+216 25 191 93</a></li>
+          <li><a href="tel:+21658510303" class="tel" style="color:#fff;font-weight:700">+216 58 510 303</a></li>
+          <li>Côte d'Ivoire — <span style="opacity:.6">sur demande</span></li>
+          <li>E-mail — <a href="mailto:mohamedali.elbiche@lamaisondumedecin.com" style="color:#5EE9C4;word-break:break-all">mohamedali.elbiche@lamaisondumedecin.com</a></li>
           <li>Matricule fiscal : <b style="color:#5EE9C4">1654853G</b></li>
         </ul>
       </div>
